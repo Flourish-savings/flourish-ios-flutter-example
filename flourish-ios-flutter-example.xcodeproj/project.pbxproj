@@ -7,13 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C22D03852B4EF62E0028B8E9 /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037C2B4EF5EE0028B8E9 /* App.xcframework */; };
+		C22D03862B4EF62E0028B8E9 /* App.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037C2B4EF5EE0028B8E9 /* App.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C22D03882B4EF6300028B8E9 /* flourish_flutter_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037D2B4EF5EE0028B8E9 /* flourish_flutter_sdk.xcframework */; };
+		C22D03892B4EF6300028B8E9 /* flourish_flutter_sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037D2B4EF5EE0028B8E9 /* flourish_flutter_sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C22D038A2B4EF6310028B8E9 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037F2B4EF5EE0028B8E9 /* Flutter.xcframework */; };
+		C22D038B2B4EF6310028B8E9 /* Flutter.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037F2B4EF5EE0028B8E9 /* Flutter.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C22D038C2B4EF6320028B8E9 /* FlutterPluginRegistrant.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037E2B4EF5EE0028B8E9 /* FlutterPluginRegistrant.xcframework */; };
+		C22D038D2B4EF6320028B8E9 /* FlutterPluginRegistrant.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037E2B4EF5EE0028B8E9 /* FlutterPluginRegistrant.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C22D038E2B4EF6330028B8E9 /* webview_flutter_wkwebview.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037B2B4EF5EE0028B8E9 /* webview_flutter_wkwebview.xcframework */; };
+		C22D038F2B4EF6330028B8E9 /* webview_flutter_wkwebview.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C22D037B2B4EF5EE0028B8E9 /* webview_flutter_wkwebview.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C26FDF932B4ED39C004A7602 /* flourish_ios_flutter_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FDF922B4ED39C004A7602 /* flourish_ios_flutter_exampleApp.swift */; };
 		C26FDF952B4ED39C004A7602 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FDF942B4ED39C004A7602 /* ContentView.swift */; };
 		C26FDF972B4ED39E004A7602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26FDF962B4ED39E004A7602 /* Assets.xcassets */; };
 		C26FDF9A2B4ED39E004A7602 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26FDF992B4ED39E004A7602 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C22D03872B4EF62E0028B8E9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C22D038F2B4EF6330028B8E9 /* webview_flutter_wkwebview.xcframework in Embed Frameworks */,
+				C22D038B2B4EF6310028B8E9 /* Flutter.xcframework in Embed Frameworks */,
+				C22D03892B4EF6300028B8E9 /* flourish_flutter_sdk.xcframework in Embed Frameworks */,
+				C22D038D2B4EF6320028B8E9 /* FlutterPluginRegistrant.xcframework in Embed Frameworks */,
+				C22D03862B4EF62E0028B8E9 /* App.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C20184D02B4EF09600C115BB /* Release */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Release; path = Flutter/Release; sourceTree = "<group>"; };
+		C20184D22B4EF10000C115BB /* Debug */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Debug; path = Flutter/Debug; sourceTree = "<group>"; };
+		C20184D72B4EF41B00C115BB /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
+		C22D037B2B4EF5EE0028B8E9 /* webview_flutter_wkwebview.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = webview_flutter_wkwebview.xcframework; path = Flutter/Release/webview_flutter_wkwebview.xcframework; sourceTree = "<group>"; };
+		C22D037C2B4EF5EE0028B8E9 /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = App.xcframework; path = Flutter/Release/App.xcframework; sourceTree = "<group>"; };
+		C22D037D2B4EF5EE0028B8E9 /* flourish_flutter_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = flourish_flutter_sdk.xcframework; path = Flutter/Release/flourish_flutter_sdk.xcframework; sourceTree = "<group>"; };
+		C22D037E2B4EF5EE0028B8E9 /* FlutterPluginRegistrant.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlutterPluginRegistrant.xcframework; path = Flutter/Release/FlutterPluginRegistrant.xcframework; sourceTree = "<group>"; };
+		C22D037F2B4EF5EE0028B8E9 /* Flutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = Flutter/Release/Flutter.xcframework; sourceTree = "<group>"; };
 		C26FDF8F2B4ED39C004A7602 /* flourish-ios-flutter-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flourish-ios-flutter-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26FDF922B4ED39C004A7602 /* flourish_ios_flutter_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flourish_ios_flutter_exampleApp.swift; sourceTree = "<group>"; };
 		C26FDF942B4ED39C004A7602 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,17 +62,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C22D038E2B4EF6330028B8E9 /* webview_flutter_wkwebview.xcframework in Frameworks */,
+				C22D038A2B4EF6310028B8E9 /* Flutter.xcframework in Frameworks */,
+				C22D03852B4EF62E0028B8E9 /* App.xcframework in Frameworks */,
+				C22D038C2B4EF6320028B8E9 /* FlutterPluginRegistrant.xcframework in Frameworks */,
+				C22D03882B4EF6300028B8E9 /* flourish_flutter_sdk.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C20184CF2B4EF09600C115BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C22D037C2B4EF5EE0028B8E9 /* App.xcframework */,
+				C22D037D2B4EF5EE0028B8E9 /* flourish_flutter_sdk.xcframework */,
+				C22D037F2B4EF5EE0028B8E9 /* Flutter.xcframework */,
+				C22D037E2B4EF5EE0028B8E9 /* FlutterPluginRegistrant.xcframework */,
+				C22D037B2B4EF5EE0028B8E9 /* webview_flutter_wkwebview.xcframework */,
+				C20184D72B4EF41B00C115BB /* InterfaceBuilderKit.framework */,
+				C20184D22B4EF10000C115BB /* Debug */,
+				C20184D02B4EF09600C115BB /* Release */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C26FDF862B4ED39C004A7602 = {
 			isa = PBXGroup;
 			children = (
 				C26FDF912B4ED39C004A7602 /* flourish-ios-flutter-example */,
 				C26FDF902B4ED39C004A7602 /* Products */,
+				C20184CF2B4EF09600C115BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +134,7 @@
 				C26FDF8B2B4ED39C004A7602 /* Sources */,
 				C26FDF8C2B4ED39C004A7602 /* Frameworks */,
 				C26FDF8D2B4ED39C004A7602 /* Resources */,
+				C22D03872B4EF62E0028B8E9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

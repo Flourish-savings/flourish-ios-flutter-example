@@ -1,0 +1,11 @@
+framework module flourish_flutter_sdk {
+  umbrella header "flourish_flutter_sdk-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module flourish_flutter_sdk.Swift {
+  header "flourish_flutter_sdk-Swift.h"
+  requires objc
+}
