@@ -33,7 +33,6 @@ struct ContentView: View {
           let rootViewController = window.rootViewController
         else { return }
 
-        // Create the FlutterViewController.
         let flutterViewController = FlutterViewController(
           engine: flutterDependencies.flutterEngine,
           nibName: nil,
@@ -44,4 +43,3 @@ struct ContentView: View {
         rootViewController.present(flutterViewController, animated: true)
     }
 }
-
