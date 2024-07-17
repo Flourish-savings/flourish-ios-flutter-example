@@ -2,44 +2,124 @@ import SwiftUI
 import Flutter
 
 struct ContentView: View {
-    @EnvironmentObject var flutterDependencies: FlutterDependencies
+    @EnvironmentObject var flutterEngine: FlutterEngineWrapper
+    @EnvironmentObject var flutterEngineCampaign: FlutterEngineCampaignWrapper
+    
+    @State private var showFlutterView = false
     
     var body: some View {
-        ZStack{
-            VStack(spacing: 10) {
-                Image(.logo)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(EdgeInsets(top: 30, leading: 100, bottom: 100, trailing: 100))
-                Text("This is a native iOS App, click the button below to open our \n module in Flutter")
-                    .multilineTextAlignment(.center)
-                    .padding(EdgeInsets(top: 10, leading: 30, bottom: 100, trailing: 30))
+        NavigationView {
+            VStack {
+
+                NavigationLink(
+                    destination: FlutterViewControllerWrapper().environmentObject(flutterEngine),
+                    label: {
+                        Text("Go to Referral")
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    })
+                .padding(.horizontal)
                 
-                Button("Open FlourishFI Flutter module") {
-                    showFlutter()
-                }
-                .buttonStyle(.borderedProminent)
-                Spacer()
+                Spacer().frame(height: 20)
+                
+                NavigationLink(
+                    destination: OnBoardingView(),
+                    label: {
+                        Text("Go to Referral after OnBoarding")
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    })
+                .padding(.horizontal)
+                
+                Spacer().frame(height: 20)
+                
+                NavigationLink(
+                    destination: FlutterViewControllerCampaingWrapper().environmentObject(flutterEngineCampaign),
+                    label: {
+                        Text("Go to Campaign")
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    })
+                .padding(.horizontal)
             }
+            
             .padding()
+            .navigationTitle("FlourishApp")
         }
     }
     
-    func showFlutter() {
-        guard
-          let windowScene = UIApplication.shared.connectedScenes
-            .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
-          let window = windowScene.windows.first(where: \.isKeyWindow),
-          let rootViewController = window.rootViewController
-        else { return }
+    struct FlutterViewControllerWrapper: UIViewControllerRepresentable {
+        @EnvironmentObject var flutterEngine: FlutterEngineWrapper
 
-        let flutterViewController = FlutterViewController(
-          engine: flutterDependencies.flutterEngine,
-          nibName: nil,
-          bundle: nil)
-        flutterViewController.modalPresentationStyle = .overCurrentContext
-        flutterViewController.isViewOpaque = false
+        func makeUIViewController(context: Context) -> FlutterViewController {
+            let flutterViewController = FlutterViewController(engine: flutterEngine.engine, nibName: nil, bundle: nil)
+            let methodChannel = FlutterMethodChannel(name: "flourish",
+                                                     binaryMessenger: flutterViewController.binaryMessenger)
 
-        rootViewController.present(flutterViewController, animated: true)
+            methodChannel.setMethodCallHandler { (call: FlutterMethodCall, result: @escaping FlutterResult) in
+                if call.method == "onBackButtonPressedEvent" {
+                    if let message = call.arguments as? String {
+                        receiveMessageFromFlutter(message)
+                        result("Message received on iOS")
+                    } else {
+                        result(FlutterError(code: "INVALID_ARGUMENT", message: "Message not provided", details: nil))
+                    }
+                } else {
+                    result(FlutterMethodNotImplemented)
+                }
+            }
+
+            return flutterViewController
+        }
+
+        func updateUIViewController(_ uiViewController: FlutterViewController, context: Context) {}
+
+        private func receiveMessageFromFlutter(_ message: String) {
+            print("Received message from Flutter: \(message)")
+        }
     }
+    
+    struct FlutterViewControllerCampaingWrapper: UIViewControllerRepresentable {
+        @EnvironmentObject var flutterEngineCampaign: FlutterEngineCampaignWrapper
+
+        func makeUIViewController(context: Context) -> FlutterViewController {
+            let flutterViewController = FlutterViewController(engine: flutterEngineCampaign.engineCampaign, nibName: nil, bundle: nil)
+            let methodChannel = FlutterMethodChannel(name: "flourish",
+                                                     binaryMessenger: flutterViewController.binaryMessenger)
+
+            methodChannel.setMethodCallHandler { (call: FlutterMethodCall, result: @escaping FlutterResult) in
+                if call.method == "onBackButtonPressedEvent" {
+                    if let message = call.arguments as? String {
+                        receiveMessageFromFlutter(message)
+                        result("Message received on iOS")
+                    } else {
+                        result(FlutterError(code: "INVALID_ARGUMENT", message: "Message not provided", details: nil))
+                    }
+                } else {
+                    result(FlutterMethodNotImplemented)
+                }
+            }
+
+            return flutterViewController
+        }
+
+        func updateUIViewController(_ uiViewController: FlutterViewController, context: Context) {}
+
+        private func receiveMessageFromFlutter(_ message: String) {
+            print("Received message from Flutter: \(message)")
+        }
+    }
+}
+
+#Preview {
+    OnBoardView()
 }
