@@ -21,6 +21,7 @@
 		C26FDF952B4ED39C004A7602 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FDF942B4ED39C004A7602 /* ContentView.swift */; };
 		C26FDF972B4ED39E004A7602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26FDF962B4ED39E004A7602 /* Assets.xcassets */; };
 		C26FDF9A2B4ED39E004A7602 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26FDF992B4ED39E004A7602 /* Preview Assets.xcassets */; };
+		EF690D1A2C4802C40061A941 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF690D192C4802C40061A941 /* OnBoardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		C26FDF942B4ED39C004A7602 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C26FDF962B4ED39E004A7602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C26FDF992B4ED39E004A7602 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF690D192C4802C40061A941 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				C26FDF942B4ED39C004A7602 /* ContentView.swift */,
 				C26FDF962B4ED39E004A7602 /* Assets.xcassets */,
 				C26FDF982B4ED39E004A7602 /* Preview Content */,
+				EF690D192C4802C40061A941 /* OnBoardingView.swift */,
 			);
 			path = "flourish-ios-flutter-example";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			files = (
 				C26FDF952B4ED39C004A7602 /* ContentView.swift in Sources */,
 				C26FDF932B4ED39C004A7602 /* flourish_ios_flutter_exampleApp.swift in Sources */,
+				EF690D1A2C4802C40061A941 /* OnBoardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
